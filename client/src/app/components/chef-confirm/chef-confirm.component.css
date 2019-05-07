@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.content {
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.confirm-box {
+    background-color: #cccccc;
+    padding: 15px;
+}
+
+.icon {
+    color: rgb(8, 156, 8);
+    text-align: center;
+}

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+  <div>
+      <form >
+          <mat-form-field >
+            <input type="number" [formControl]="countFormControl" matInput name="peoplecount" #peoplecount>
+            <mat-error *ngIf="countFormControl.hasError('required')">
+              The Person count is <strong>required</strong>
+            </mat-error>
+            <mat-placeholder class="placeholder">People Count</mat-placeholder>
+          </mat-form-field>
+        </form>
+  </div>
+
+<div class="example-container">
+  <h2>Chef gives</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>I want</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+  </div>
+</div>
+
+<div>  <button mat-flat-button color="primary" (click)='orderMenu(peoplecount.value)'>Submit</button></div>
+
+</div>

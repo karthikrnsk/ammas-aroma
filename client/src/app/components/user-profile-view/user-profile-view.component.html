@@ -1,0 +1,57 @@
+<div class="main">
+
+    <div class="loginbox">
+      <h2 class="login-title">Profile</h2>
+      <br>
+      
+      
+      <form class="login-form">
+
+          <button mat-flat-button color="#ffffff" (click)="edit()">Edit</button>
+          <p><br></p>
+
+          <mat-form-field class="login-full-width">
+              <input type="text" matInput #name [disabled]="isDisabled" [value]="getName()" >
+              <mat-placeholder class="placeholder">Full Name</mat-placeholder>
+            </mat-form-field>
+            <!-- <p>{{name.value}}</p> -->
+  
+  
+        <!-- <mat-form-field class="login-full-width">
+          <input type="text" matInput #username [disabled]="isDisabled" [value]="getname()">
+          <mat-placeholder class="placeholder">Username</mat-placeholder>
+        </mat-form-field>
+      
+        <mat-form-field class="login-full-width">
+            <input type="password" matInput #password [disabled]="isDisabled" [value]="getname()">
+            <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field> -->
+  
+        <mat-form-field class="login-full-width" >
+          <input type="text" matInput #locality [disabled]="isDisabled" [value]="getLocality()">
+          <mat-placeholder class="placeholder">Locality</mat-placeholder>
+      </mat-form-field>
+  
+      <mat-form-field class="login-full-width">
+        <input type="tel" matInput #contact [disabled]="isDisabled" [value]="getContact()">
+        <mat-placeholder class="placeholder">Contact no</mat-placeholder>
+    </mat-form-field>
+  
+    <mat-form-field class="login-full-width" >
+      <input type="email" matInput #emailid [disabled]="isDisabled" [value]="getEmail()">
+      <mat-placeholder class="placeholder">Email Id</mat-placeholder>
+  </mat-form-field>
+  
+    <mat-form-field class="login-full-width" >
+      <input type="text" matInput #address [disabled]="isDisabled" [value]="getAddress()">
+      <mat-placeholder class="placeholder">Address</mat-placeholder>
+  </mat-form-field>
+  
+  <button mat-flat-button color="#ffffff" [disabled]="isDisabled" (click)="update(name.value, locality.value, contact.value, emailid.value, address.value)">Update</button>
+      </form>
+    
+      
+        
+    </div>
+    </div>
+    

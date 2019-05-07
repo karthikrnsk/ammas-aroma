@@ -1,0 +1,43 @@
+<div class="container-fluid grid">
+    <mat-grid-list cols="4" [gutterSize]="'20px'">
+        <mat-grid-tile class="chef-tile" *ngFor="let chef of chefs" >
+            <div class="container chef-card">
+                <div class="row">
+                    <b>Booking Id:</b>&nbsp;{{chef.booking_id}}<br><br>
+                    <input type="hidden" value={{chef.booking_id}} #bookingid>                                  
+
+                </div>
+                <div class="row">
+                    <b>Date: &nbsp;</b><p>{{chef.date | date}}</p>                    
+                </div>
+                <div class="row">
+                    <b>Chef Name:&nbsp;</b>{{chef.name | titlecase}} <br><br>
+                </div>
+                <div class="row">
+                        <b>Contact: &nbsp;</b><p style="font-style: italic">{{chef.contact}}</p> 
+                        <input type="hidden" value={{chef.chef_id}} #chefid>                                  
+                </div>
+                
+                <div class="row">
+                        <!-- <p>{{chef.rated}}</p> -->
+                        <mat-button-toggle-group name="rating" aria-label="Rating" #rating=matButtonToggleGroup (click)="rateBooking(chefid.value, rating.value, bookingid.value)" *ngIf="chef.rated == 'false'">
+                            
+  
+                                <mat-button-toggle value="like"><mat-icon aria-label="like" >thumb_up</mat-icon></mat-button-toggle>
+                                <mat-button-toggle value="dislike"><mat-icon aria-label="dislike">thumb_down</mat-icon></mat-button-toggle>
+                                
+                              </mat-button-toggle-group>
+                </div>
+            </div>
+
+
+
+
+        </mat-grid-tile>        
+    </mat-grid-list>
+
+
+
+
+
+</div>

@@ -1,0 +1,44 @@
+.grid {
+    padding: 30px;
+}
+/* mat-grid-list {
+    
+} */
+mat-grid-tile {
+    background: #312f2f;
+    /* gutterSize: 10px; */
+    /* margin: 10px; */
+    /* padding: 10px; */
+}
+
+.chef-card {
+    padding: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+    background-color: rgba(49,47,47, 0.3);
+    color:#ffffff;
+}
+
+.example-card {
+    max-width: 300px;
+    max-height: 600px;
+    margin:20px;
+    padding:30px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../assets/images/img_avatar.1.png');
+    background-size: cover;
+    margin: 20px;
+  }
+
+ .card-header {
+     margin-top:2px;
+     margin-bottom:2px;
+ }
+ .card-content {
+    margin-top:2px;
+    margin-bottom:2px;
+ }

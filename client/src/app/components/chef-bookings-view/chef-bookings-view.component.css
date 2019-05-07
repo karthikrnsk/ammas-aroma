@@ -1,0 +1,73 @@
+.example-small-box, .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 300px;
+  }
+  
+
+  .grid {
+    padding: 30px;
+}
+/* mat-grid-list {
+    
+} */
+mat-grid-tile {
+    background: #312f2f;
+    /* gutterSize: 10px; */
+    /* margin: 10px; */
+    /* padding: 10px; */
+}
+
+.chef-card {
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+    background-color: rgba(49,47,47, 0.3);
+    color:#ffffff;
+}
+
+.example-card {
+    max-width: 400px;
+    max-height: 700px;
+    margin:20px;
+    padding:30px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../assets/images/img_avatar.1.png');
+    background-size: cover;
+    margin: 20px;
+  }
+
+ .card-header {
+     margin-top:2px;
+     margin-bottom:2px;
+ }
+ .card-content {
+    margin-top:2px;
+    margin-bottom:2px;
+ }
+
+ a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+.expansion-panel {
+  background-color: rgba(255,255,255,0.4);
+}

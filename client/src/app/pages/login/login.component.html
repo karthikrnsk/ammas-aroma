@@ -1,0 +1,46 @@
+<div class="main">
+
+<div class="loginbox">
+  <h2 class="login-title">Login</h2>
+  <form class="login-form" [formGroup]="loginForm">
+      <mat-form-field class="login-full-width">
+        <input type="text" matInput name="username" #username>
+        <mat-placeholder class="placeholder">Username</mat-placeholder>
+      </mat-form-field>
+    
+      <mat-form-field class="login-full-width">
+          <input type="password" matInput name="password" #password>
+          <mat-placeholder class="placeholder">Password</mat-placeholder>
+      </mat-form-field>
+
+      
+      <mat-radio-group class="login-full-width" #login_type="matRadioGroup">
+        <mat-radio-button value="user">User</mat-radio-button>
+        <mat-radio-button value="chef">Chef</mat-radio-button>
+      </mat-radio-group><br><br>
+  
+      <button mat-flat-button color="#ffffff" (click)="login(username.value, password.value,login_type.value)">Login</button>
+      
+  </form>
+<br>
+  <mat-accordion>
+    <mat-expansion-panel class="expansion-panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Don't have an Account
+        </mat-panel-title>
+        <mat-panel-description>
+          Sign up here ! 
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <br>
+      <button mat-raised-button class="reg-button" (click)="openUserReg()">User Registration<br></button>
+      <br><br>
+      <button mat-raised-button (click)="openChefReg()">Chef Registration</button>
+    </mat-expansion-panel>
+    
+      
+  </mat-accordion> 
+    
+</div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container-fluid main">
+    <div class="margin-20">
+        <h4 style="text-align: center;">{{chefname | titlecase}} Menu Card <br></h4>
+        <h5 style="text-align: center;">{{foodstyle | titlecase}}<br><br></h5>
+      </div>
+    <div class="row">
+      <div class="col-xs-12">
+        
+        <form [formGroup]="myForm" novalidate >
+          
+          <!--menu-->
+          <div formArrayName="menu">
+            <div *ngFor="let menu of myForm.controls.menu.controls; let i=index" class="panel panel-default">
+              <div class="panel-heading">
+                <span>Menu Item {{i + 1}}</span>
+                <span *ngIf="myForm.controls.menu.controls.length > 1" style="margin-left: 10px;"><button mat-flat-button class="fields" color="warn" (click)="removeMenuItem(i)">Remove Item</button></span>
+                
+              </div>
+              <div class="panel-body d-flex flex-row" [formGroupName]="i">
+                <div class="form-group fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Dish Name</mat-label>
+                        <input type="text" formControlName="dish" matInput #dish>
+                        
+                        <mat-error *ngIf="!myForm.controls.menu.controls[i].controls.dish.valid">
+                          Dish name is <strong>required</strong>
+                        </mat-error>                        
+                      </mat-form-field>
+                  <!-- <label>Dish Name</label>
+                  <input matInput type="text" class="form-control" formControlName="dish">
+                  <small [hidden]="myForm.controls.menu.controls[i].controls.dish.valid" class="text-danger">
+                      Dish Name is required
+                  </small> -->
+                  
+                </div>
+                <div class="form-group fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Cost</mat-label>
+                        <input type="text" matTooltip="Cost should be based on a per person basis" formControlName="cost" matInput #cost>
+                        
+                        <mat-error *ngIf="!myForm.controls.menu.controls[i].controls.cost.valid">
+                          Cost of the dish is <strong>required</strong>
+                        </mat-error>                        
+                      </mat-form-field>
+                  <!-- <label>Cost</label>
+                  <input type="text" class="form-control" formControlName="cost">
+                  <small [hidden]="myForm.controls.menu.controls[i].controls.cost.valid" class="text-danger">
+                      Cost of the Dish is required
+                  </small> -->
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+  
+          <div class="margin-20 d-flex flex-row">
+              <button mat-flat-button class="fields" color="primary" (click)="addMenuItem()">Add Menu Item</button>
+              <!-- <button mat-flat-button class="fields" color="warn" (click)="removeMenuItem(i)">Remove Item</button> -->
+              <!-- <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+            <a (click)="addMenuItem()" style="cursor: default">
+              Add another menu item +
+            </a> -->
+          </div>
+  
+          <div style="margin:20px;">
+            <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid" (click)='save(myForm)'>Submit</button>
+          </div>
+          <div class="clearfix"></div>  
+          
+        </form>
+      </div>
+    </div>
+  </div>

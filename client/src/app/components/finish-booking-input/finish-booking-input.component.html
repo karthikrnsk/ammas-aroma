@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <form class="login-form">
+        <mat-form-field class="login-full-width">
+          <input type="text" matInput #cfkey>
+          <mat-placeholder class="placeholder">Enter the secret key from user</mat-placeholder>
+        </mat-form-field>
+    </form>
+          <button mat-raised-button class="reg-button" (click)="finishBooking(cfkey.value)">Finish Booking<br></button>
+</div>

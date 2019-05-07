@@ -1,0 +1,75 @@
+<div class="main">
+
+  <div class="loginbox">
+    <h2 class="login-title">User Registration</h2>
+    <form class="login-form">
+        <mat-form-field class="login-full-width">
+            <input type="text" [formControl]="nameFormControl" matInput #name>
+            
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+            <mat-placeholder class="placeholder">Full Name</mat-placeholder>
+          </mat-form-field>
+          
+        <mat-form-field class="login-full-width">
+          <input type="text" [formControl]="usernameFormControl" matInput #username>
+          <mat-error *ngIf="usernameFormControl.hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+          <mat-placeholder class="placeholder">Username</mat-placeholder>
+        </mat-form-field>
+      
+        <mat-form-field class="login-full-width">
+            <input type="password" [formControl]="passwordFormControl" matInput #password>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+            <mat-placeholder class="placeholder">Password</mat-placeholder>
+        </mat-form-field>
+
+        <mat-form-field class="login-full-width" >
+          <input type="text" matInput [formControl]="localityFormControl" #locality>
+          <mat-error *ngIf="localityFormControl.hasError('required')">
+            Locality is <strong>required</strong>
+          </mat-error>
+          <mat-placeholder class="placeholder">Locality</mat-placeholder>
+      </mat-form-field>
+
+      <mat-form-field class="login-full-width">
+        <input type="tel" [formControl]="contactFormControl" matInput maxlength="10" (keypress)=_keyPress($event) #contact>
+        <mat-error *ngIf="contactFormControl.hasError('required')">
+          Contact is <strong>required</strong>
+        </mat-error>
+        <!-- <mat-error *ngIf="contactFormControl.hasError('pattern')">
+          It is not a <strong>valid contact number</strong>
+        </mat-error> -->
+        <mat-placeholder class="placeholder">Contact no</mat-placeholder>
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width" >
+      <input type="email" matInput [formControl]="emailFormControl" #emailid>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-placeholder class="placeholder">Email Id</mat-placeholder>
+  </mat-form-field>
+
+  <mat-form-field class="login-full-width">
+      <textarea matInput #address></textarea>
+      <mat-placeholder class="placeholder">Address</mat-placeholder>
+    </mat-form-field>
+
+ 
+    <br>
+  <button mat-flat-button color="#ffffff" [mat-dialog-close] (click)="register(name.value, username.value, password.value,locality.value, contact.value, emailid.value, address.value)">Register</button>
+    </form>
+  
+    
+      
+  </div>
+  </div>
+  

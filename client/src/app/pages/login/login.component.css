@@ -1,0 +1,66 @@
+.main {
+  position: relative;
+  background-image: url("../../../assets/images/login_background.png");
+  height: 100vh;
+  /* background-color: #cccccc; */
+  overflow: auto;
+  
+}
+
+.loginbox {
+  margin-left:60%;
+  margin-top: 80px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color:rgba(0,0,0,0.5);
+  color: rgba(255,255,255,1);
+  max-width: 400px;
+  max-height: 520px;
+  
+}
+
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  color: rgba(255,255,255,1)
+}
+
+.login-full-width {
+  width: 100%;
+  color: rgba(255,255,255,1)
+}
+
+.login-title {
+text-align: center;
+font-family: 'Segoe UI';
+color: rgba(255,255,255,1)
+}
+
+.placeholder {
+color: rgba(255,255,255,0.4);
+}
+
+.mat-focussed.placeholder {
+color: rgba(255,255,255,1);
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+  
+}
+
+a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+.expansion-panel {
+  background-color: rgba(255,255,255,0.4);
+}
+
+
+.mat-dialog-container {
+  padding: 2px;
+}

@@ -1,0 +1,33 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Home">
+      <div class="container-fluid  ">
+        <app-chef-booking></app-chef-booking>
+      </div>
+  </mat-tab>
+
+
+
+  <mat-tab label="Previous Bookings" (click)="getPrev()">
+      <div class="container-fluid  ">
+          <app-user-bookings-view></app-user-bookings-view>
+      </div>
+  </mat-tab>
+
+  <mat-tab label="Profile">
+    <div class="container-fluid " style="text-align: center; padding: 10px;">
+        <app-user-profile-view></app-user-profile-view>
+    </div>
+</mat-tab>
+<mat-tab disabled>
+    <ng-template mat-tab-label>
+        <button mat-flat-button color="primary" (click)="logout()">Log Out</button>
+    </ng-template>
+</mat-tab>
+</mat-tab-group>
+
+
+
+
+
+
+

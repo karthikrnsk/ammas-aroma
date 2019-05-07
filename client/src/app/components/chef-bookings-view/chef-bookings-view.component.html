@@ -1,0 +1,77 @@
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Current Bookings">
+      <div class="container-fluid grid ">
+          <mat-grid-list cols="4" [gutterSize]="'20px'">
+            <ng-container *ngFor="let booking of bookings">
+              <mat-grid-tile class="chef-tile mat-elevation-z4"  *ngIf="booking.status == 'booked'">
+                  <div class="container-fluid chef-card" >
+                      <div class="row">
+                          <p>Booking Id: {{booking.booking_id}} <br></p>
+                      </div>
+                      <div class="row">
+                          <mat-icon>person</mat-icon><h3>&nbsp;&nbsp;{{booking.name | titlecase}}<br><br></h3>
+                      </div>
+                      <div class="row">
+                              <mat-icon>phone</mat-icon><p> &nbsp;&nbsp; {{booking.contact}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                              
+                      </div>
+                      <div class="row">
+                              <p>{{booking.address | titlecase}}</p>
+                      </div>
+                      <div class="row">
+                              <!-- <p style="font-style: italic">{{chef.locality}}</p>  -->
+                              <input type="hidden" value={{booking.booking_id}} #chefid>                                  
+                      </div>
+                      
+                      <div class="row">
+                          <button mat-raised-button class="reg-button" (click)="openCompleteBooking()">Finish Booking<br></button>
+
+                      </div>
+                  </div>
+              </mat-grid-tile> 
+            </ng-container>       
+          </mat-grid-list>
+      </div>
+  </mat-tab>
+
+
+
+  <mat-tab label="Completed Bookings">
+      <div class="container-fluid grid ">
+          <mat-grid-list cols="4" [gutterSize]="'20px'">
+            <ng-container *ngFor="let booking of bookings">
+              <mat-grid-tile class="chef-tile mat-elevation-z4"  *ngIf="booking.status == 'completed'">
+                  <div class="container chef-card" >
+                      <div class="row">
+                          <p>Booking Id: {{booking.booking_id}} <br></p>
+                      </div>
+                      <div class="row">
+                          <mat-icon>person</mat-icon><h3>&nbsp;&nbsp;{{booking.name | titlecase}}<br><br></h3>
+                      </div>
+                      <div class="row">
+                              <mat-icon>phone</mat-icon><p> &nbsp;&nbsp; {{booking.contact}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                              
+                      </div>
+                      <div class="row">
+                              <p>{{booking.address | titlecase}}</p>
+                      </div>
+                      <div class="row">
+                              <!-- <p style="font-style: italic">{{chef.locality}}</p>  -->
+                              <input type="hidden" value={{booking.booking_id}} #chefid>                                  
+                      </div>
+                      
+                      
+                  </div>
+              </mat-grid-tile> 
+            </ng-container>       
+          </mat-grid-list>
+      </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
+
+
+

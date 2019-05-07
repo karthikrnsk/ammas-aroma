@@ -1,0 +1,24 @@
+<div class = "container-fluid row">
+  <mat-card class="example-card col-md-6 col-sm-2 d-flex flex-row" *ngFor="let chef of chefs">
+    <mat-card-header class="card-header">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{chef.name}}</mat-card-title>
+      <mat-card-subtitle>{{chef.style}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+        <img mat-card-image src="{{chef.icon}}" alt="Photo of a Shiba Inu">        
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>BOOK</button>
+        <!-- <button mat-button>SHARE</button> -->
+      </mat-card-actions>
+    <!-- <mat-card-content>
+      
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+     
+    </mat-card-content> -->
+    
+  </mat-card>
+</div>
